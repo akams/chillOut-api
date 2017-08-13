@@ -7,9 +7,6 @@ var bodyParser = require('body-parser');
 var jsonPromises = require('./middlewares/response-promise');
 var globalVariables = require('./middlewares/global-variables');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-
 var app = express();
 
 // view engine setup
@@ -26,8 +23,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(jsonPromises);
 app.use(globalVariables);
 
+var index = require('./routes/index');
+var users = require('./routes/users');
+var establishment = require('./routes/establishment');
+
 app.use('/', index);
 app.use('/users', users);
+app.use('/establishment', establishment);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
