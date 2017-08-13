@@ -26,10 +26,12 @@ app.use(globalVariables);
 var index = require('./routes/index');
 var users = require('./routes/users');
 var establishment = require('./routes/establishment');
+var category = require('./routes/category');
 
 app.use('/', index);
 app.use('/users', users);
 app.use('/establishment', establishment);
+app.use('/category', category);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
