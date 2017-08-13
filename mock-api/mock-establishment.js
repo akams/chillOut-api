@@ -5,6 +5,7 @@ var listEstablishment = function() {
         const companies = [];
         for (var i = 0; i < 10; i++) {
             companies.push({
+                id: i,
                 name: faker.company.companyName(),
                 description: faker.company.catchPhraseAdjective(),
                 img: faker.image.imageUrl(),
@@ -13,9 +14,7 @@ var listEstablishment = function() {
                     streetName: faker.address.streetName(),
                     zipCode: faker.address.zipCode(),
                 },
-                commerce: {
-                    price: faker.commerce.price(),
-                }
+                price: faker.commerce.price()
             });
         }
         resolve(companies);
