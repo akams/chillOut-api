@@ -9,4 +9,9 @@ router.get('/', function (req, res, next) {
   res.jsonPromise(MOCK_ESTABISHMENT.listEstablishment());
 });
 
+router.get('/:id', function (req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.jsonPromise(MOCK_ESTABISHMENT.getEstablishment(req.params.id));
+});
+
 module.exports = router;
