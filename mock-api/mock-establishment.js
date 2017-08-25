@@ -9,12 +9,14 @@ var getListEstablishment = function () {
       companies.push({
         id: i,
         name: faker.company.companyName(),
-        description: faker.company.catchPhraseAdjective(),
+        description: faker.company.catchPhraseDescriptor(),
         img: faker.image[img](640, 480),
         adress: {
           city: faker.address.city(),
           streetName: faker.address.streetName(),
           zipCode: faker.address.zipCode(),
+          latitude: faker.address.latitude(),
+          longitude: faker.address.longitude()
         },
         price: faker.commerce.price()
       });
@@ -30,7 +32,7 @@ var getEstablishment = function (id) {
     resolve({
       id: id,
       name: faker.company.companyName(),
-      description: faker.company.catchPhraseAdjective(),
+      description: faker.company.catchPhraseDescriptor(),
       img: faker.image[img](640, 480),
       adress: {
         city: faker.address.city(),
