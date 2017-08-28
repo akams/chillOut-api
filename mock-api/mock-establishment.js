@@ -14,10 +14,10 @@ var getListEstablishment = function () {
         adress: {
           city: faker.address.city(),
           streetName: faker.address.streetName(),
-          zipCode: faker.address.zipCode(),
-          latitude: faker.address.latitude(),
-          longitude: faker.address.longitude()
+          zipCode: faker.address.zipCode()
         },
+        latitude: faker.address.latitude(),
+        longitude: faker.address.longitude(),
         price: faker.commerce.price()
       });
     }
@@ -39,6 +39,8 @@ var getEstablishment = function (id) {
         streetName: faker.address.streetName(),
         zipCode: faker.address.zipCode(),
       },
+      latitude: faker.address.latitude(),
+      longitude: faker.address.longitude(),
       price: faker.commerce.price()
     });
   });
